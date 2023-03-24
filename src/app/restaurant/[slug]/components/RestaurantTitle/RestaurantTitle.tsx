@@ -1,7 +1,9 @@
-const RestaurantTitle = () => {
+import { RestaurantTitleProps } from './RestaurantTitleProps';
+
+const RestaurantTitle = ({name, ...props}: RestaurantTitleProps) => {
   return (
-    <div className='mt-4 border-b pb-6'>
-      <h1 className='font-bold text-6xl'>Milesstone Grill</h1>
+    <div className='mt-4 border-b pb-6' {...props}>
+      <h1 className='font-bold text-6xl'>{name}</h1>
     </div>
   );
 };
