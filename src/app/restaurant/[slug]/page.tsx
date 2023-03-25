@@ -1,10 +1,10 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Reviews } from '@prisma/client';
 import RestaurantDescription from './components/RestaurantDescription/RestaurantDescription';
 import RestaurantImages from './components/RestaurantImages/RestaurantImages';
 import RestaurantNavbar from './components/RestaurantNavbar/RestaurantNavbar';
 import RestaurantRating from './components/RestaurantRating/RestaurantRating';
 import RestaurantReservationCard from './components/RestaurantReservationCard/RestaurantReservationCard';
-import RestaurantReview from './components/RestaurantReview/RestaurantReview';
+import RestaurantReviews from './components/RestaurantReviews/RestaurantReviews';
 import RestaurantTitle from './components/RestaurantTitle/RestaurantTitle';
 
 const prisma = new PrismaClient();
@@ -15,6 +15,7 @@ export type RestaurantDetailsType = {
   images: string[];
   description: string;
   slug: string;
+  reviews: Reviews[]
 };
 
 const fetchRestaurantBySlug = async (
@@ -30,6 +31,7 @@ const fetchRestaurantBySlug = async (
       images: true,
       description: true,
       slug: true,
+      reviews: true
     },
   });
 
@@ -50,7 +52,7 @@ const RestaurantDetails = async ({ params }: { params: { slug: string } }) => {
         <RestaurantRating />
         <RestaurantDescription description={restaurant.description}/>
         <RestaurantImages images={restaurant.images}/>
-        <RestaurantReview />
+        <RestaurantReviews reviews={restaurant.reviews}/>
       </div>
       <div className='w-[27%] relative text-reg'>
         <RestaurantReservationCard />

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { RestaurantNavbarProps } from './RestaurantNavbarProps';
+import { RestaurantNavbarProps } from './RestaurantNavbar.props';
 
 const RestaurantNavbar = ({slug, ...props}: RestaurantNavbarProps) => {
   return (

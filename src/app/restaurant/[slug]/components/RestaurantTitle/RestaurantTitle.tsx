@@ -1,4 +1,4 @@
-import { RestaurantTitleProps } from './RestaurantTitleProps';
+import { RestaurantTitleProps } from './RestaurantTitle.props';
 
 const RestaurantTitle = ({name, ...props}: RestaurantTitleProps) => {
   return (

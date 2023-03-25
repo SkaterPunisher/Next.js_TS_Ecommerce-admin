@@ -1,5 +1,5 @@
 import { ImageDefault } from '@/ui/ImageDefault/ImageDefault';
-import { RestaurantImagesProps } from './RestaurantImagesProps';
+import { RestaurantImagesProps } from './RestaurantImages.props';
 
 const RestaurantImages = ({ images, ...props }: RestaurantImagesProps) => {
   return (

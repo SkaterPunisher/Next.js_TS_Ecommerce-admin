@@ -1,5 +1,5 @@
 import RestaurantMenuCard from '../RestaurantMenuCard/RestaurantMenuCard';
-import { RestaurantMenuProps } from './RestaurantMenuProps';
+import { RestaurantMenuProps } from './RestaurantMenu.props';
 
 const RestaurantMenu = ({ menu, ...props }: RestaurantMenuProps) => {
   return (

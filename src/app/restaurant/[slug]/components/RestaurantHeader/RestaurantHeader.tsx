@@ -1,5 +1,5 @@
 import { renderTitle } from '@/utils/renderTitle';
-import { RestaurantHeaderProps } from './RestaurantHeaderProps';
+import { RestaurantHeaderProps } from './RestaurantHeader.props';
 
 const RestaurantHeader = ({ name, ...props }: RestaurantHeaderProps) => {
   return (

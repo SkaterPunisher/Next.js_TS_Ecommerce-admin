@@ -1,4 +1,4 @@
-import { Cuisine, Location, PRICE } from '@prisma/client';
+import { Cuisine, Location, PRICE, Review } from '@prisma/client';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
 export type SearchRestaurantCardProps = DetailedHTMLProps<
@@ -13,5 +13,6 @@ export type SearchRestaurantCardProps = DetailedHTMLProps<
     main_image: string;
     price: PRICE;
     cuisine: Cuisine;
+    reviews: Review[]
   };
 };
