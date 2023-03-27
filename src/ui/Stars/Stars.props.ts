@@ -1,9 +1,10 @@
 import { Review } from '@prisma/client';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 
-export type RestaurantRatingProps = DetailedHTMLProps<
+export type StarsProps = DetailedHTMLProps<
   HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
 > & {
-  reviews: Review[]
+  reviews: Review[];
+  rating?: number;
 };

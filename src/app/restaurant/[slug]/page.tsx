@@ -1,4 +1,4 @@
-import { PrismaClient, Reviews } from '@prisma/client';
+import { PrismaClient, Review } from '@prisma/client';
 import RestaurantDescription from './components/RestaurantDescription/RestaurantDescription';
 import RestaurantImages from './components/RestaurantImages/RestaurantImages';
 import RestaurantNavbar from './components/RestaurantNavbar/RestaurantNavbar';
@@ -15,7 +15,7 @@ export type RestaurantDetailsType = {
   images: string[];
   description: string;
   slug: string;
-  reviews: Reviews[]
+  reviews: Review[]
 };
 
 const fetchRestaurantBySlug = async (

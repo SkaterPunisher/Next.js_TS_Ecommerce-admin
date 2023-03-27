@@ -1,7 +1,7 @@
-import { Reviews } from '@prisma/client'
+import { Review } from '@prisma/client'
 import { calculateReviewsRatingAverage } from './calculateReviewsRatingAverage'
 
-export const renderRatingText = (reviews: Reviews[]) => {
+export const renderRatingText = (reviews: Review[]) => {
     const rating = calculateReviewsRatingAverage(reviews)
 
     if (rating > 4) return 'Awesome'

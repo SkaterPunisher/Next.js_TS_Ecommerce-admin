@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { SearchRestaurantCardProps } from './SearchRestaurantCard.props';
 import Price from '@/ui/Price/Price';
 import { renderRatingText } from '@/utils/renderRatingText';
+import Stars from '@/ui/Stars/Stars';
 
 const SearchRestaurantCard = ({
   restaurant,
@@ -20,7 +21,7 @@ const SearchRestaurantCard = ({
       <div className='pl-5'>
         <h2 className='text-3xl'>{restaurant.name}</h2>
         <div className='flex items-start'>
-          <div className='flex mb-2'>*****</div>
+          <Stars reviews={restaurant.reviews} />
           <p className='ml-2 text-sm'>{renderRatingText(restaurant.reviews)}</p>
         </div>
         <div className='mb-9'>

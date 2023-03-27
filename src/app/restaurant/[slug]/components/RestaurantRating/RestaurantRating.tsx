@@ -1,3 +1,4 @@
+import Stars from '@/ui/Stars/Stars';
 import { calculateReviewsRatingAverage } from '@/utils/calculateReviewsRatingAverage';
 import { RestaurantRatingProps } from './RestaurantRating.props';
 
@@ -5,7 +6,7 @@ const RestaurantRating = ({ reviews }: RestaurantRatingProps) => {
   return (
     <div className='flex items-end'>
       <div className='ratings mt-2 flex items-center'>
-        <p>*****</p>
+        <Stars reviews={reviews} />
         <p className='text-reg ml-3'>
           {calculateReviewsRatingAverage(reviews).toFixed(1)}
         </p>

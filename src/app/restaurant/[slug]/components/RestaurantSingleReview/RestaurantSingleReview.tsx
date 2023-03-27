@@ -1,3 +1,4 @@
+import Stars from '@/ui/Stars/Stars';
 import { RestaurantSingleReviewProps } from './RestaurantSingleReview.props';
 
 const RestaurantSingleReview = ({ review }: RestaurantSingleReviewProps) => {
@@ -14,7 +15,9 @@ const RestaurantSingleReview = ({ review }: RestaurantSingleReviewProps) => {
         </div>
         <div className='ml-10 w-5/6'>
           <div className='flex items-center'>
-            <div className='flex mr-5'>*****</div>
+            <div className='flex mr-5'>
+              <Stars rating={review.rating} reviews={[]}/>
+            </div>
           </div>
           <div className='mt-5'>
             <p className='text-lg font-light'>{review.text}</p>
