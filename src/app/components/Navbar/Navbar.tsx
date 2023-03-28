@@ -1,3 +1,4 @@
+import AuthModal from '@/ui/AuthModal/AuthModal';
 import Logo from '@/ui/Logo/Logo';
 
 const Navbar = () => {
@@ -6,10 +7,8 @@ const Navbar = () => {
       <Logo />
       <div>
         <div className='flex'>
-          <button className='bg-blue-400 text-white border p-1 px-4 rounded mr-3'>
-            Sign in
-          </button>
-          <button className='border p-1 px-4 rounded'>Sign up</button>
+          <AuthModal isSignin={true}/>
+          <AuthModal isSignin={false}/>
         </div>
       </div>
     </nav>

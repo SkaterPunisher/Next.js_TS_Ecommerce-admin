@@ -1,4 +1,5 @@
 import { PrismaClient, Review } from '@prisma/client';
+import { notFound } from 'next/navigation';
 import RestaurantDescription from './components/RestaurantDescription/RestaurantDescription';
 import RestaurantImages from './components/RestaurantImages/RestaurantImages';
 import RestaurantNavbar from './components/RestaurantNavbar/RestaurantNavbar';
@@ -15,7 +16,7 @@ export type RestaurantDetailsType = {
   images: string[];
   description: string;
   slug: string;
-  reviews: Review[]
+  reviews: Review[];
 };
 
 const fetchRestaurantBySlug = async (
@@ -31,12 +32,12 @@ const fetchRestaurantBySlug = async (
       images: true,
       description: true,
       slug: true,
-      reviews: true
+      reviews: true,
     },
   });
 
   if (!restaurant) {
-    throw new Error();
+    notFound();
   }
   return restaurant;
 };
@@ -47,12 +48,12 @@ const RestaurantDetails = async ({ params }: { params: { slug: string } }) => {
   return (
     <>
       <div className='bg-white w-[70%] rounded p-3 shadow'>
-        <RestaurantNavbar slug={restaurant.slug}/>
-        <RestaurantTitle name={restaurant.name}/>
-        <RestaurantRating reviews={restaurant.reviews}/>
-        <RestaurantDescription description={restaurant.description}/>
-        <RestaurantImages images={restaurant.images}/>
-        <RestaurantReviews reviews={restaurant.reviews}/>
+        <RestaurantNavbar slug={restaurant.slug} />
+        <RestaurantTitle name={restaurant.name} />
+        <RestaurantRating reviews={restaurant.reviews} />
+        <RestaurantDescription description={restaurant.description} />
+        <RestaurantImages images={restaurant.images} />
+        <RestaurantReviews reviews={restaurant.reviews} />
       </div>
       <div className='w-[27%] relative text-reg'>
         <RestaurantReservationCard />
