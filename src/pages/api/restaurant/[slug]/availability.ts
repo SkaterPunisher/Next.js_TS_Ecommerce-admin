@@ -1,3 +1,4 @@
+import { times } from '@/data';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
@@ -17,5 +18,15 @@ export default async function handler(
     });
   }
 
-  return res.json({ slug, day, time, partySize });
+  const searchTimes = times.find((t) => {
+    return t.time === time;
+  })?.searchTimes;
+
+  if (!searchTimes) {
+    return res.status(400).json({
+      errorMessage: 'Invalid data provider',
+    });
+  }
+
+  return res.json({ searchTimes });
 }
