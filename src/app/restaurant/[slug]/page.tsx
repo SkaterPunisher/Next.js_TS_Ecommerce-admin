@@ -17,6 +17,8 @@ export type RestaurantDetailsType = {
   description: string;
   slug: string;
   reviews: Review[];
+  open_time: string,
+  close_time: string,
 };
 
 const fetchRestaurantBySlug = async (
@@ -33,6 +35,8 @@ const fetchRestaurantBySlug = async (
       description: true,
       slug: true,
       reviews: true,
+      open_time: true,
+      close_time: true,
     },
   });
 
@@ -56,7 +60,7 @@ const RestaurantDetails = async ({ params }: { params: { slug: string } }) => {
         <RestaurantReviews reviews={restaurant.reviews} />
       </div>
       <div className='w-[27%] relative text-reg'>
-        <RestaurantReservationCard />
+        <RestaurantReservationCard openTime={restaurant.open_time} closeTime={restaurant.close_time}/>
       </div>
     </>
   );

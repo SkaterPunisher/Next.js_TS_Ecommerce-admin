@@ -1,6 +1,7 @@
 import '@/styles/globals.scss';
 import Navbar from '@/app/components/Navbar/Navbar';
 import AuthContext from './context/AuthContext';
+import 'react-datepicker/dist/react-datepicker.css';
 
 export const metadata = {
   title: 'Next.js',
